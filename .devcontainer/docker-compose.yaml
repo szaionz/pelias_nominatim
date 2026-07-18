@@ -1,0 +1,11 @@
+services:
+    app:
+        volumes:
+            - ../app:/app
+        ports:
+            - 127.0.0.1:8000:8000
+        build:
+            context: ..
+            dockerfile: .devcontainer/Dockerfile
+        environment:
+            NOMINATIM_URL: https://nominatim.shmoovit.shmoose.top
