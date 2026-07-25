@@ -47,7 +47,7 @@ def read_item(text: str):
         properties = feature['properties']
         properties=properties['geocoding']
         properties['label']=properties['name']
-        properties['sub_label']=properties.get('city') or properties['properties'].get('county') or properties['properties'].get('state')
+        properties['sub_label']=properties.get('city') or properties.get('county') or properties.get('state')
     return obj
     
 if __name__ == "__main__":
