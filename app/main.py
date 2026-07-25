@@ -44,8 +44,8 @@ def read_item(text: str):
         return
     obj =r.json()
     for feature in obj['features']:
-        properties = feature['properties']
-        properties=properties['geocoding']
+        feature['properties'] = feature['properties']['geocoding']
+        properties=feature['properties']
         properties['label']=properties['name']
         properties['sub_label']=properties.get('city') or properties.get('county') or properties.get('state')
     return obj
